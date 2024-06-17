@@ -157,11 +157,20 @@ export const trimWhitespace = (str) => {
   return str.trim();
 };
 
- /**
-     * Utility function to find the maximum value in an array
-     * @param {Array<number>} array - The array of numbers
-     * @returns {number} - Returns the maximum value in the array
-     */
- export const findMax = (array) => {
+/**
+ * Utility function to find the maximum value in an array
+ * @param {Array<number>} array - The array of numbers
+ * @returns {number} - Returns the maximum value in the array
+ */
+export const findMax = (array) => {
   return Math.max(...array);
-}
+};
+
+/**
+ * Utility function to find the minimum value in an array
+ * @param {Array<number>} array - The array of numbers
+ * @returns {number} - Returns the minimum value in the array
+ */
+export const findMin = (array) => {
+  return Math.min(...array);
+};
