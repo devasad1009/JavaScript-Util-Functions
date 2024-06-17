@@ -120,31 +120,39 @@ export const isValidPassword = (password) => {
   const hasSpecialChar = specialCharPattern.test(password);
 
   return hasUppercase && hasSpecialChar;
-}
+};
 
 // Example usage
 const password = "Example@123";
 
 if (isValidPassword(password)) {
-    console.log("Password is valid.");
+  console.log("Password is valid.");
 } else {
-    console.log("Password must contain at least one uppercase letter and one special character.");
+  console.log(
+    "Password must contain at least one uppercase letter and one special character."
+  );
 }
 
 /**
-     * Utility function to generate a random password
-     * @param {number} length - The desired length of the generated password
-     * @returns {string} - Returns the generated password
-     */
+ * Utility function to generate a random password
+ * @param {number} length - The desired length of the generated password
+ * @returns {string} - Returns the generated password
+ */
 export const generateRandomPassword = (length) => {
-  const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()";
+  const chars =
+    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()";
   let password = "";
   for (let i = 0; i < length; i++) {
-      password += chars.charAt(Math.floor(Math.random() * chars.length));
+    password += chars.charAt(Math.floor(Math.random() * chars.length));
   }
   return password;
-}
+};
 
-
-
-
+/**
+ * Utility function to trim whitespace from a string
+ * @param {string} str - The string to be trimmed
+ * @returns {string} - Returns the trimmed string
+ */
+export const trimWhitespace = (str) => {
+  return str.trim();
+};
