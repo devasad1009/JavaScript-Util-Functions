@@ -106,3 +106,29 @@ export const isValidEmail = (email) => {
 // Example usage:
 console.log(isValidEmail("test@example.com")); // true
 console.log(isValidEmail("invalid-email")); // false
+
+/**
+ * Utility function to check if a password contains at least one uppercase letter and one special character
+ * @param {string} password - The password to be validated
+ * @returns {boolean} - Returns true if the password contains at least one uppercase letter and one special character, otherwise false
+ */
+export const isValidPassword = (password) => {
+  const uppercasePattern = /[A-Z]/;
+  const specialCharPattern = /[!@#$%^&*(),.?":{}|<>]/;
+
+  const hasUppercase = uppercasePattern.test(password);
+  const hasSpecialChar = specialCharPattern.test(password);
+
+  return hasUppercase && hasSpecialChar;
+}
+
+// Example usage
+const password = "Example@123";
+
+if (isValidPassword(password)) {
+    console.log("Password is valid.");
+} else {
+    console.log("Password must contain at least one uppercase letter and one special character.");
+}
+
+
