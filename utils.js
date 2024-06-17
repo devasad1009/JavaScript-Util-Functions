@@ -131,4 +131,20 @@ if (isValidPassword(password)) {
     console.log("Password must contain at least one uppercase letter and one special character.");
 }
 
+/**
+     * Utility function to generate a random password
+     * @param {number} length - The desired length of the generated password
+     * @returns {string} - Returns the generated password
+     */
+export const generateRandomPassword = (length) => {
+  const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()";
+  let password = "";
+  for (let i = 0; i < length; i++) {
+      password += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return password;
+}
+
+
+
 
