@@ -174,3 +174,25 @@ export const findMax = (array) => {
 export const findMin = (array) => {
   return Math.min(...array);
 };
+
+/**
+ * Check if a value or any nested value in an array or object is null.
+ *
+ * @param {any} value - The value to check for null.
+ * @returns {boolean} - Returns true if the value or any nested value is null, otherwise false.
+ */
+export const isNullOrContainsNull = (value) => {
+  if (value === null) {
+    return true;
+  }
+
+  if (Array.isArray(value)) {
+    return value.some(isNullOrContainsNull);
+  }
+
+  if (typeof value === "object" && value !== null) {
+    return Object.values(value).some(isNullOrContainsNull);
+  }
+
+  return false;
+};
